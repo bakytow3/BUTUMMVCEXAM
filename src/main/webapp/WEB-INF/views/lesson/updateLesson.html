@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>update-lesson</title>
+    <style>
+        .fcc-btn {
+            background-color: #199319;
+            color: white;
+            padding: 5px 15px;
+            font-size: 14px;
+            text-decoration: none;
+        }
+    </style>
+    <style>
+        body{
+            margin-top: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+<form
+        action="#"
+        th:action="@{/{courseId}/{id}/saveUpdateLesson(courseId=${courseId}, id=${lesson.id})}"
+        th:object="${lesson}"
+        method="POST">
+
+    <input type="hidden" name="id" th:field="*{id}">
+    <input type="text" name="lessonName" th:field="*{lessonName}" placeholder="lessonName">
+    <br><br>
+    <input class="fcc-btn" style="..." type="submit" value="Add">
+
+</form>
+</body>
+</html>

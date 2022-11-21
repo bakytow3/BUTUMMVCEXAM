@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>update-instructor</title>
+    <style>
+        .fcc-btn {
+            background-color: #199319;
+            color: white;
+            padding: 5px 15px;
+            font-size: 14px;
+            text-decoration: none;
+        }
+    </style>
+    <style>
+        body{
+            margin-top: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+<form
+        th:action="@{/{courseId}/{id}/updateInstructor(id=${instructor.id}, courseId=${courseId})}"
+        th:object="${instructor}"
+        method="post">
+
+    <input type="hidden" name="id" th:field="*{id}">
+    <label>
+        <input type="text" name="firstName" th:field="*{firstName}" placeholder="First Name">
+    </label>
+    <br><br>
+    <label>
+        <input type="text" name="lastName" th:field="*{lastName}" placeholder="Last Name">
+    </label>
+    <br><br>
+    <label>
+        <input type="text" name="phoneNumber" th:field="*{phoneNumber}" placeholder="Image">
+    </label>
+    <br><br>
+    <label>
+        <input type="text" name="email" th:field="*{email}" placeholder="Email">
+    </label>
+    <br><br>
+    <label>
+        <input type="text" name="specialization" th:field="*{specialization}" placeholder="Specialization">
+    </label>
+    <br><br>
+    <input class="fcc-btn" style="..." type="submit" value="Add">
+
+</form>
+</body>
+</html>
